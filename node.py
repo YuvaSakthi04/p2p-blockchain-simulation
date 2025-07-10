@@ -1,4 +1,3 @@
-### node.py
 from flask import Flask, jsonify, request, render_template, redirect, url_for
 from uuid import uuid4
 from blockchain import Blockchain
