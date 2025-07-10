@@ -34,19 +34,25 @@ Each node maintains its own blockchain, mines blocks with Proof of Work (PoW), r
 5. Nodes **sync** using the longest valid chain when conflicts arise.
 
 ### Dashboard View
-![Dashboard](screenshots/Node_1.png)(screenshots/Node_2.png)(screenshots/Node_3.png)
+![Dashboard](screenshots/Node_1.png)
+
+### Node 2
+![Dashboard](screenshots/Node_2.png)
+
+### Node 3
+![Dashboard](screenshots/Node_3.png)
 
 ### Adding Transaction
 ![Transaction](screenshots/Adding_Transaction.png)
 
-### Pending Transaction
+### Pending Transaction before mining
 ![Pending Transaction](screenshots/Pending_Transaction_before_mining.png)
 
-### Peer Node Registering
+### Peer Node Registering for Node 2
 ![Peer node registering for Node2](screenshots/Peer_node_of_Node2.png)
 
-### Mining Block
+### Mining Block in Node 1
 ![Mining Block](screenshots/After_mining_block_in_node1.png)
 
-### Resolving Conflicts
+### Resolving Conflicts in Node 2
 ![Resolving conflicts in node 2](screenshots/After_resolving_conflicts.png)
