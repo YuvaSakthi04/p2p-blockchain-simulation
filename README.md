@@ -19,3 +19,34 @@ Each node maintains its own blockchain, mines blocks with Proof of Work (PoW), r
 - Flask (web framework)
 - `requests` (for peer-to-peer HTTP communication)
 - HTML/CSS (Flask templates for dashboard)
+
+## Working
+
+1. Each Flask server is a **node** in the blockchain network.
+2. Users can:
+   - Submit transactions
+   - Mine new blocks
+   - View the chain
+   - Register other nodes
+   - Resolve chain conflicts
+3. Transactions are stored temporarily until mined into a block.
+4. **Proof of Work (PoW)** ensures mining takes computational effort.
+5. Nodes **sync** using the longest valid chain when conflicts arise.
+
+### Dashboard View
+![Dashboard](screenshots/Node_1.png)(screenshots/Node_2.png)(screenshots/Node_3.png)
+
+### Adding Transaction
+![Transaction](screenshots/Adding_Transaction.png)
+
+### Pending Transaction
+![Pending Transaction](screenshots/Pending_Transaction_before_mining.png)
+
+### Peer Node Registering
+![Peer node registering for Node2](screenshots/Peer_node_of_Node2.png)
+
+### Mining Block
+![Mining Block](screenshots/After_mining_block_in_node1.png)
+
+### Resolving Conflicts
+![Resolving conflicts in node 2](screenshots/After_resolving_conflicts.png)
