@@ -56,3 +56,6 @@ Each node maintains its own blockchain, mines blocks with Proof of Work (PoW), r
 
 ### **Resolving Conflicts in Node 2**
 ![Resolving conflicts in node 2](screenshots/After_resolving_conflicts.png)
+
+### **logs**
+![Logs](screenshots/logs.png)
