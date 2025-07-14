@@ -103,7 +103,7 @@ A responsive dashboard is provided where users can:
 
 
 ###  Demo Video
- [Click here to watch the demo video](demo_video/demo.mp4)
+ [Watch the recorded simulation on Google Drive](https://drive.google.com/file/d/1AbCDEfGhIJKlmNOPqrstuVWXYzZ/view?usp=sharing)
 
 
 ### **Dashboard View**
