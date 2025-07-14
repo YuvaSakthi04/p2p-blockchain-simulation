@@ -103,7 +103,7 @@ A responsive dashboard is provided where users can:
 
 
 ###  Demo Video
- [Click here to watch the demo video](demo_video/Demo%20video.mp4)
+ [Click here to watch the demo video](demo_video/demo.mp4)
 
 
 ### **Dashboard View**
