@@ -20,90 +20,91 @@ Each node maintains its own blockchain, mines blocks with Proof of Work (PoW), r
 - requests (for peer-to-peer HTTP communication)
 - HTML/CSS (Flask templates for dashboard)
 
-## Working
+## ⚙️ Working
 
 This project simulates a fully decentralized peer-to-peer blockchain network, where each node (Flask server) independently maintains a copy of the blockchain, mines blocks, and communicates with other peers over HTTP. Here's a breakdown of how the system works:
 
-**1. Node Structure**
-Each instance of node.py represents a node in the network:
+### 🧩 1. Node Structure
+Each instance of `node.py` represents a node in the network:
 
-Runs on a unique port (e.g., 5000, 5001, 5002)
+- Runs on a unique port (e.g., 5000, 5001, 5002)
+- Maintains its own copy of the blockchain
+- Has the ability to mine, transact, and sync with peers
 
-Maintains its own copy of the blockchain
+---
 
-Has the ability to mine, transact, and sync with peers
-
-**2. Transactions**
+### 📝 2. Transactions
 Users can submit new transactions via the web interface. These transactions:
 
-Contain sender, recipient, and amount
+- Contain `sender`, `recipient`, and `amount`
+- Are temporarily stored in a transaction pool (`current_transactions`)
+- Wait to be mined into a block
 
-Are temporarily stored in a transaction pool (current_transactions)
+---
 
-Wait to be mined into a block
-
-**3. Mining & Proof of Work (PoW)**
+### ⛏️ 3. Mining & Proof of Work (PoW)
 Mining performs two key tasks:
 
-Solves a PoW problem — it finds a number (nonce) such that the hash of the previous proof and current guess starts with four leading zeroes (0000)
+- Solves a PoW problem — it finds a number (nonce) such that the hash of the previous proof and current guess starts with four leading zeroes (`0000`)
 
 Once solved, it:
 
-Creates a new block
+- Creates a new block
+- Adds all pending transactions into the block
+- Rewards the miner with 1 unit of coin
+- Appends the block to the local chain
 
-Adds all pending transactions into the block
+This PoW system ensures computational effort and resists spamming or fraud.
 
-Rewards the miner with 1 unit of coin
+---
 
-Appends the block to the local chain
+### 🌐 4. Registering Peer Nodes
+Nodes can register other peer nodes using their `IP:PORT`. Once registered:
 
-This PoW system ensures computational effort and resists spamming/fraud.
+- The node keeps track of peer addresses
+- Enables network-wide communication and chain sharing
 
-**4. Registering Peer Nodes**
-Nodes can register other peer nodes using their IP:port. Once registered:
+---
 
-The node keeps track of peer addresses
-
-Enables network-wide communication and chain sharing
-
-**5. Conflict Resolution & Consensus**
+### 🔄 5. Conflict Resolution & Consensus
 In a real blockchain, different nodes might have slightly different chains due to timing delays. To maintain consistency:
 
-The system uses a simple consensus algorithm:
-Longest valid chain wins
+- The system uses a simple consensus algorithm: **Longest valid chain wins**
+- When `/nodes/resolve` is triggered:
+  - The node fetches all peer chains
+  - Validates them for hash integrity and PoW correctness
+  - If a longer valid chain is found, it replaces its own
 
-When /nodes/resolve is triggered:
+This mechanism ensures the network converges to a **single consistent version** of the blockchain.
 
-The node fetches all peer chains
+---
 
-Validates them for hash integrity and PoW correctness
-
-If a longer valid chain is found, it replaces its own
-
-This mechanism ensures that the network converges to a single version of the truth.
-
-**6. Viewing the Blockchain**
+### 📜 6. Viewing the Blockchain
 Users can:
 
-View the full blockchain in a readable JSON format via /chain
+- View the full blockchain in a readable JSON format via the `/chain` endpoint
+- See each block's:
+  - Index
+  - Timestamp
+  - Transactions
+  - PoW
+  - Previous hash link
 
-See each block's index, timestamp, transactions, PoW, and hash links
+---
 
-**7. Web Dashboard**
-A clean, responsive dashboard is provided where users can:
+### 🖥️ 7. Web Dashboard
+A responsive dashboard is provided where users can:
 
-Add transactions through a form
+- Add transactions through a simple web form
+- Mine new blocks with one click
+- Register peer nodes by submitting their addresses
+- Resolve conflicts to sync chains
+- Visually view pending transactions and all blocks in a scrollable UI
 
-Mine new blocks with one click
 
-Register peer nodes
+### 📽️ Demo Video
+🎬 [Click here to watch the demo video](demo_video/Demo%20video.mp4)
 
-Resolve conflicts
-
-View pending transactions and all blocks visually
-
-### **Demo Video**
-![Demo](demo_video/Demo video.mp4)
 
 ### **Dashboard View**
 ![Dashboard](screenshots/Node_1.png)
